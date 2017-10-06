@@ -28,7 +28,7 @@ public class PasienController extends HttpServlet{
     Pasien pasien = new Pasien();
     pasien.setNama(req.getParameter("namaPasien"));
     pasien.setAlamat(req.getParameter("alamat"));
-    pasien.setTanggal_lahir(Date.valueOf("tanggalLahir"));
+    pasien.setTanggal_lahir(Date.valueOf(req.getParameter("tanggalLahir")));
     
     PasienDao pasienDao = new PasienDao();
     try {
