@@ -1,7 +1,12 @@
 package com.tabeldata.controller;
 
 import com.tabeldata.Model.Pasien;
+import com.tabeldata.dao.PasienDao;
 import java.io.IOException;
+import java.sql.Date;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -23,7 +28,15 @@ public class PasienController extends HttpServlet{
     Pasien pasien = new Pasien();
     pasien.setNama(req.getParameter("namaPasien"));
     pasien.setAlamat(req.getParameter("alamat"));
-    pasien.setTanggal_lahir(Date.);
+    pasien.setTanggal_lahir(Date.valueOf("tanggalLahir"));
+    
+    PasienDao pasienDao = new PasienDao();
+    try {
+        pasienDao.save(pasien);
+    } catch (SQLException ex) {
+        Logger.getLogger(PasienController.class.getName()).log(Level.SEVERE, null, ex);
+    }
+
     }
     
     
