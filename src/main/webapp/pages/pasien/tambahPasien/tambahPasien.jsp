@@ -18,7 +18,7 @@
             </div>
               <div>
                   <label for="tanggalLahir">Tanggal Lahir</label>
-                  <input type="text" name="tanggalLahir" id="tanggalLahir" pattern=""/>
+                  <input type="text" name="tanggalLahir" id="tanggalLahir" pattern="^(19[5-9][0-9]|20[0-9][0-9]|2999)[/](0?[1-9]|1[0-2])[/](0?[1-9]|[12][0-9]|3[01])$"/>
             </div>
               <div>
                   <button type="submit">Tambah</button>
