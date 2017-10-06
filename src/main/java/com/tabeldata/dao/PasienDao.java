@@ -29,10 +29,9 @@ public void save(Pasien pasien) throws SQLException{
         String sql ="INSERT INTO latihan1.pasien(nama,alamat,tanggal_lahir) VALUES (?,?,?)";
         PreparedStatement statement = connection.prepareStatement(sql);
         //tempat isi recordnya
-        statement.setString(1,pasien.getJudulBuku());
-        statement.setInt(2,buku.getTahunTerbit());
-        statement.setString(3,buku.getPengarang());
-        statement.setInt(4,buku.getJumlahBuku());
+        statement.setString(1,pasien.getNama());
+        statement.setString(2,pasien.getAlamat());
+        statement.setDate(3,pasien.getTanggal_lahir());
         
         
         
@@ -42,19 +41,18 @@ public void save(Pasien pasien) throws SQLException{
         connection.close();
     }
 
-    public void update(Buku buku) throws SQLException {
+    public void update(Pasien pasien) throws SQLException {
         KoneksiDatabase koneksiDB = new KoneksiDatabase();
         DataSource datasource = koneksiDB.getDataSource();
         Connection connection = datasource.getConnection();
            
-        String sql ="update perpus.buku set judul_buku=?, pengarang=?,jumlah_buku=?,tahun_terbit=? WHERE id=?";
+        String sql ="update latihan1.pasien set nama=?, alamat=?,tanggal_lahir=?,WHERE id=?";
         PreparedStatement statement = connection.prepareStatement(sql);
         //tempat isi recordnya
-        statement.setString(1,buku.getJudulBuku());
-        statement.setInt(4,buku.getTahunTerbit());
-        statement.setString(2,buku.getPengarang());
-        statement.setInt(3,buku.getJumlahBuku());
-        statement.setInt(5,buku.getId());
+        statement.setString(1,pasien.getNama());
+        statement.setString(2,pasien.getAlamat());
+        statement.setDate(3,pasien.getTanggal_lahir());
+        statement.setInt(4,pasien.getId());
         
         
         
