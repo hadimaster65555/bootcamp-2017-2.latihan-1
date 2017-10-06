@@ -26,7 +26,7 @@ public void save(Pasien pasien) throws SQLException{
         DataSource datasource = koneksiDB.getDataSource();
         Connection connection = datasource.getConnection();
            
-        String sql ="INSERT INTO latihan1.pasien(nama,alamat,tanggal_lahir) VALUES (?,?,?)";
+        String sql ="INSERT INTO latihan_1.pasien(nama,alamat,tanggal_lahir) VALUES (?,?,?)";
         PreparedStatement statement = connection.prepareStatement(sql);
         //tempat isi recordnya
         statement.setString(1,pasien.getNama());
@@ -46,7 +46,7 @@ public void save(Pasien pasien) throws SQLException{
         DataSource datasource = koneksiDB.getDataSource();
         Connection connection = datasource.getConnection();
            
-        String sql ="update latihan1.pasien set nama=?, alamat=?,tanggal_lahir=?,WHERE id=?";
+        String sql ="update latihan_1.pasien set nama=?, alamat=?,tanggal_lahir=?,WHERE id=?";
         PreparedStatement statement = connection.prepareStatement(sql);
         //tempat isi recordnya
         statement.setString(1,pasien.getNama());
@@ -67,7 +67,7 @@ public void save(Pasien pasien) throws SQLException{
         DataSource datasource = koneksiDatabase.getDataSource();
         Connection connection = datasource.getConnection();
         
-        String sql="delete from latihan1.pasien where id=?";
+        String sql="delete from latihan_1.pasien where id=?";
         
         PreparedStatement statement = connection.prepareStatement(sql);
         
@@ -84,7 +84,7 @@ public void save(Pasien pasien) throws SQLException{
         DataSource datasource = koneksiDatabase.getDataSource();
         Connection connection = datasource.getConnection();
         
-        String sql="select id,nama,alamat,tanggal_lahir from latihan1.pasien";
+        String sql="select id,nama,alamat,tanggal_lahir from latihan_1.pasien";
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery(sql);
         while (resultSet.next()){
@@ -108,7 +108,7 @@ public void save(Pasien pasien) throws SQLException{
         DataSource datasource = koneksiDatabase.getDataSource();
         Connection connection = datasource.getConnection();
         
-        String sql="select id,nama,alamat,tanggal_lahir from latihan1.pasien where id=?";
+        String sql="select id,nama,alamat,tanggal_lahir from latihan_1.pasien where id=?";
         PreparedStatement statement = connection.prepareStatement(sql);
         statement.setInt(1, idPasien);
         ResultSet resultSet = statement.executeQuery();

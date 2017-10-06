@@ -27,7 +27,7 @@ public class PasienController extends HttpServlet{
 //        super.doPost(req, resp); //To change body of generated methods, choose Tools | Templates.
     Pasien pasien = new Pasien();
     pasien.setNama(req.getParameter("namaPasien"));
-    pasien.setAlamat(req.getParameter("alamat"));
+    pasien.setAlamat(req.getParameter("alamatPasien"));
     pasien.setTanggal_lahir(Date.valueOf(req.getParameter("tanggalLahir")));
     
     PasienDao pasienDao = new PasienDao();
