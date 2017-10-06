@@ -62,71 +62,71 @@ public void save(Pasien pasien) throws SQLException{
         connection.close();
     }
 
-    public void delete(Integer idBuku) throws SQLException {
+    public void delete(Integer idPasien) throws SQLException {
         KoneksiDatabase koneksiDatabase = new KoneksiDatabase();
         DataSource datasource = koneksiDatabase.getDataSource();
         Connection connection = datasource.getConnection();
         
-        String sql="delete from perpus.buku where id=?";
+        String sql="delete from latihan1.pasien where id=?";
         
         PreparedStatement statement = connection.prepareStatement(sql);
         
-        statement.setInt(1,idBuku);
+        statement.setInt(1,idPasien);
         
         statement.executeUpdate();
         statement.close();
         connection.close();
     }
 
-    public List<Buku> findAll() throws SQLException {
-        List<Buku> listBuku = new ArrayList<>();
+    public List<Pasien> findAll() throws SQLException {
+        List<Pasien> listPasien = new ArrayList<>();
         KoneksiDatabase koneksiDatabase = new KoneksiDatabase();
         DataSource datasource = koneksiDatabase.getDataSource();
         Connection connection = datasource.getConnection();
         
-        String sql="select id,judul_buku,tahun_terbit,pengarang,jumlah_buku from perpus.buku";
+        String sql="select id,nama,alamat,tanggal_lahir from latihan1.pasien";
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery(sql);
         while (resultSet.next()){
-            Buku buku = new Buku();
+            Pasien pasien = new Pasien();
             //inputkan informasi
-            buku.setId(resultSet.getInt("id"));
-            buku.setJudulBuku(resultSet.getString("judul_buku"));
-            buku.setTahunTerbit(resultSet.getInt("tahun_terbit"));
-            buku.setPengarang(resultSet.getString("pengarang"));
-            buku.setJumlahBuku(resultSet.getInt("jumlah_buku"));
-            //hasi; input dimasukkan kedalam variabel listBuku
-            listBuku.add(buku);
+            pasien.setId(resultSet.getInt("id"));
+            pasien.setNama(resultSet.getString("nama"));
+            pasien.setAlamat(resultSet.getString("alamat"));
+            pasien.setTanggal_lahir(resultSet.getDate("tanggal_lahir"));
+            //hasi; input dimasukkan kedalam variabel listPasien
+            listPasien.add(pasien);
         }
         resultSet.close();
         statement.close();
         connection.close();
-        return listBuku;
+        return listPasien;
     }
 
-    public Buku findById(Integer idBuku) throws SQLException {
+    public Pasien findById(Integer idPasien) throws SQLException {
         KoneksiDatabase koneksiDatabase = new KoneksiDatabase();
         DataSource datasource = koneksiDatabase.getDataSource();
         Connection connection = datasource.getConnection();
         
-        String sql="select id,judul_buku,tahun_terbit,pengarang,jumlah_buku from perpus.buku where id=?";
+        String sql="select id,nama,alamat,tanggal_lahir from latihan1.pasien where id=?";
         PreparedStatement statement = connection.prepareStatement(sql);
-        statement.setInt(1, idBuku);
+        statement.setInt(1, idPasien);
         ResultSet resultSet = statement.executeQuery();
-        Buku buku = new Buku();
+        Pasien pasien = new Pasien();
 
         if (resultSet.next()){
             
-            //inputkan informasi
-            buku.setId(resultSet.getInt("id"));
-            buku.setJudulBuku(resultSet.getString("judul_buku"));
-            buku.setTahunTerbit(resultSet.getInt("tahun_terbit"));
-            buku.setPengarang(resultSet.getString("pengarang"));
-            buku.setJumlahBuku(resultSet.getInt("jumlah_buku"));
-            //hasi; input dimasukkan kedalam variabel listBuku
+            pasien.setId(resultSet.getInt("id"));
+            pasien.setNama(resultSet.getString("nama"));
+            pasien.setAlamat(resultSet.getString("alamat"));
+            pasien.setTanggal_lahir(resultSet.getDate("tanggal_lahir"));
+
         }
+        
         resultSet.close();
         statement.close();
         connection.close();
-        return buku;    
+        return pasien;    
+}
+    
 }
