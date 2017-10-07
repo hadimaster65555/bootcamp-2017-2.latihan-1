@@ -27,12 +27,11 @@ public class PasienUpdateController extends HttpServlet{
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//        super.doGet(req, resp); //To change body of generated methods, choose Tools | Templates.
     
         try {
             Integer kodePasien = Integer.valueOf(req.getParameter("kode_pasien"));
             Pasien daftarPasien = new PasienDao().findById(kodePasien);
-            req.setAttribute("pasien", kodePasien);
+            req.setAttribute("pasien", daftarPasien);
             req.getRequestDispatcher("/pages/pasien/editPasien.jsp");
         } catch (SQLException ex) {
             Logger.getLogger(PasienUpdateController.class.getName()).log(Level.SEVERE, null, ex);
@@ -41,7 +40,6 @@ public class PasienUpdateController extends HttpServlet{
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//        super.doPost(req, resp); //To change body of generated methods, choose Tools | Templates.
     Pasien pasien=new Pasien();
     pasien.setId(Integer.valueOf(req.getParameter("id")));
     pasien.setNama(req.getParameter("namaPasien"));
