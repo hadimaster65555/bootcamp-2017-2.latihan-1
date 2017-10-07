@@ -20,7 +20,7 @@
               </div>
               <div>
                   <label for="spesialis">Spesialis</label>
-                  <input type="text" name="alamatPasien" id="alamatPasien"/>
+                  <input type="text" name="spesialisDokter" id="spesialisDokter"/>
             </div>
               <div>
                   <button type="submit">Tambah</button>
