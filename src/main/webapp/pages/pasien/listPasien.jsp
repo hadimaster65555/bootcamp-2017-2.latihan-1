@@ -29,9 +29,9 @@
                 <c:forEach items="${listPasien}" var="daftarPasien" varStatus="index">
                     <tr>
                         <td>${index.count}</td>
-                        <td>${daftarPasien.namaPasien}</td>
-                        <td>${daftarPasien.alamatPasien}</td>
-                        <td>${daftarPasien.tanggalLahir}</td>
+                        <td>${daftarPasien.nama}</td>
+                        <td>${daftarPasien.alamat}</td>
+                        <td>${daftarPasien.tanggal_lahir}</td>
                         <td>
                             <a href="${pageContext.servletContext.contextPath}/pasien/delete?kode_pasien=${daftarPasien.id}">Hapus</a>
                             <a href="${pageContext.servletContext.contextPath}/pasien/ubah?kode_pasien=${daftarPasien.id}">Ubah</a>
