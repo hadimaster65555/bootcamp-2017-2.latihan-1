@@ -4,7 +4,7 @@
     Author     : USER
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="UTF-8" isELIgnored="false" language="java"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -16,11 +16,14 @@
         <form action="${pageContext.servletContext.contextPath}/ruang/new" method="post">
               <div>
                   <label for="no_ruang">Nomor Ruangan:</label>
-                  <input type="text" name="no_ruang" id="no_ruang"/>
+                  <input type="text" name="no_ruangan" id="no_ruangan"/>
               </div>
               <div>
-                  <label for="kosong">Spesialis:</label>
-                  <input type="text" name="kosong" id="kosong"/>
+                  <label for="kosong" pl>Ketersediaan:</label>
+                  <select name="kosong">
+                      <option value="FALSE">Terisi</option>
+                      <option value="TRUE">Kosong</option>
+                  </select>
               </div>
               <div>
                   <button type="submit">Tambah</button>

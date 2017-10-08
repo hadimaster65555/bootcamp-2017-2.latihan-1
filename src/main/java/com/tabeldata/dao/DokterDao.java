@@ -41,7 +41,7 @@ public void save(Dokter dokter) throws SQLException{
         DataSource datasource = koneksiDB.getDataSource();
         Connection connection = datasource.getConnection();
            
-        String sql ="update latihan_1.dotker set nama=?, spesialis=? WHERE id=?";
+        String sql ="update latihan_1.dokter set nama=?, spesialis=? WHERE id=?";
         PreparedStatement statement = connection.prepareStatement(sql);
         //tempat isi recordnya
         statement.setString(1,dokter.getNama());

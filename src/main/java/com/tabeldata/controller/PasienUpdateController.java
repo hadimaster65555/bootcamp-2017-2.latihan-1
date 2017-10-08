@@ -18,10 +18,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author USER
- */
+
 @WebServlet(urlPatterns="/pasien/update")
 public class PasienUpdateController extends HttpServlet{
 
@@ -31,7 +28,7 @@ public class PasienUpdateController extends HttpServlet{
             Integer kodePasien = Integer.valueOf(req.getParameter("kode_pasien"));
             Pasien daftarPasien = new PasienDao().findById(kodePasien);
             req.setAttribute("pasien", daftarPasien);
-            req.getRequestDispatcher("/pages/pasien/editPasien.jsp");
+            req.getRequestDispatcher("/pages/pasien/editPasien.jsp").forward(req, resp);
         } catch (SQLException ex) {
             Logger.getLogger(PasienUpdateController.class.getName()).log(Level.SEVERE, null, ex);
         }

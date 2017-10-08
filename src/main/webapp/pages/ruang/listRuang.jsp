@@ -8,7 +8,10 @@
 <!DOCTYPE html>
 <html>
     <head>
+
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="${pageContext.servletContext.contextPath}/css/bootstrap.css">
+        <link rel="stylesheet" href="${pageContext.servletContext.contextPath}/css/bootstrap.min.css">
         <title>Daftar Ruangan Yang Tersedia</title>
     </head>
     <body>
@@ -19,6 +22,7 @@
                     <td>No</td>
                     <td>Nomor Ruangan</td>
                     <td>Keterangan</td>
+                    <td>Aksi</td>
                 </tr>
             </thead>
             <tbody>
@@ -28,10 +32,10 @@
                         <td>${listRuang.no_ruangan}</td>
                         <td>
                             <c:if test="${listRuang.kosong!=true}">
-                                <c:out value="'Kamar Terisi'"/>
+                                <c:out value="Kamar Terisi"/>
                             </c:if>
                             <c:if test="${listRuang.kosong==true}">
-                                <c:out value="'Kamar Kosong'"/>
+                                <c:out value="Kamar Kosong"/>
                             </c:if>
                         </td>
                         <td>
@@ -42,5 +46,8 @@
                 </c:forEach>
             </tbody>
         </table>
+        <a class="btn btn-lg" href="/latihan-1/index.html" role="button">Kembali ke Halaman Utama</a>
+        <br>
+        <a class="btn btn-lg" href="${pageContext.servletContext.contextPath}/ruang/new" role="button">Tambah Ruangan</a>
     </body>
 </html>

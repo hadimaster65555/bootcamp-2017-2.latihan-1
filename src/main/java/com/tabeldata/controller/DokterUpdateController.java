@@ -46,7 +46,7 @@ public class DokterUpdateController extends HttpServlet{
     
     DokterDao dokterDao = new DokterDao();
         try {
-            dokterDao.save(dokter);
+            dokterDao.update(dokter);
         } catch (SQLException ex) {
             Logger.getLogger(DokterUpdateController.class.getName()).log(Level.SEVERE, null, ex);
         }

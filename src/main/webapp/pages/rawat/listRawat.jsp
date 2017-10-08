@@ -1,12 +1,11 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Basis Data Rumah Sakit</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Daftar Pasien Rawat</title>
     </head>
     <body>
-        <h1>Basis Data Rumah Sakit</h1>
-        <br>
-        
+        <h1>Hello World!</h1>
     </body>
 </html>

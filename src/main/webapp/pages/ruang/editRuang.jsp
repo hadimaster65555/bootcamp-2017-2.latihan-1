@@ -10,12 +10,15 @@
         <form action="${pageContext.servletContext.contextPath}/ruang/update" method="post">
             <input type="hidden" name="id" value="${ruang.id}"/>
         <div>
-            <label for="no_ruang">Nomor Ruangan:</label>
-                <input type="text" name="no_ruang" id="no_ruang" value="${ruang.no_ruang}"/>
+            <label for="no_ruangan">Nomor Ruangan:</label>
+                <input type="text" name="no_ruangan" id="no_ruangan" value="${ruang.no_ruangan}"/>
         </div>
         <div>
             <label for="kosong">Ketersediaan Ruang:</label>
-            <input type="text" name="kosong" id="kosong" value="${ruang.kosong}"/>
+              <select name="kosong">
+                  <option value="FALSE">Terisi</option>
+                  <option value="TRUE">Kosong</option>
+              </select>
         </div>
         <div>
             <button type="submit">Update</button>
