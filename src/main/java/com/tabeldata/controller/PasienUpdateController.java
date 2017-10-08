@@ -44,6 +44,7 @@ public class PasienUpdateController extends HttpServlet{
     pasien.setNama(req.getParameter("nama"));
     pasien.setAlamat(req.getParameter("alamat"));
     pasien.setTanggal_lahir(Date.valueOf(req.getParameter("tanggal_lahir")));
+    
     PasienDao pasienDao = new PasienDao();
         try {
             pasienDao.update(pasien);
