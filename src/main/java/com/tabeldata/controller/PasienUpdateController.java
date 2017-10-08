@@ -22,12 +22,11 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author USER
  */
-@WebServlet(urlPatterns="/pasien/ubah")
+@WebServlet(urlPatterns="/pasien/update")
 public class PasienUpdateController extends HttpServlet{
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-    
         try {
             Integer kodePasien = Integer.valueOf(req.getParameter("kode_pasien"));
             Pasien daftarPasien = new PasienDao().findById(kodePasien);
@@ -42,9 +41,9 @@ public class PasienUpdateController extends HttpServlet{
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     Pasien pasien=new Pasien();
     pasien.setId(Integer.valueOf(req.getParameter("id")));
-    pasien.setNama(req.getParameter("namaPasien"));
-    pasien.setAlamat(req.getParameter("alamatPasien"));
-    pasien.setTanggal_lahir(Date.valueOf(req.getParameter("tanggalLahir")));
+    pasien.setNama(req.getParameter("nama"));
+    pasien.setAlamat(req.getParameter("alamat"));
+    pasien.setTanggal_lahir(Date.valueOf(req.getParameter("tanggal_lahir")));
     PasienDao pasienDao = new PasienDao();
         try {
             pasienDao.update(pasien);

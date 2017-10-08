@@ -84,7 +84,7 @@ public void save(Dokter dokter) throws SQLException{
             dokter.setId(resultSet.getInt("id"));
             dokter.setNama(resultSet.getString("nama"));
             dokter.setSpesialis(resultSet.getString("spesialis"));
-            //hasi; input dimasukkan kedalam variabel listPasien
+            //hasi; input dimasukkan kedalam variabel listDokter
             listDokter.add(dokter);
         }
         resultSet.close();

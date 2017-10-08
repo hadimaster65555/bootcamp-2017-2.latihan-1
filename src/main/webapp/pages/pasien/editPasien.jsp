@@ -7,19 +7,19 @@
     </head>
     <body>
         <h1>Ubah Data Pasien</h1>
-        <form action="${pageContext.servletContext.contextPath}/pasien/ubah" method="post">
+        <form action="${pageContext.servletContext.contextPath}/pasien/update" method="post">
             <input type="hidden" name="id" value="${pasien.id}"/>
             <div>
-                <label for="namaPasien">Nama Pasien</label>
-                <input type="text" name="namaPasien" id="namaPasien" value="${pasien.nama}"/>
+                <label for="nama">Nama Pasien:</label>
+                <input type="text" name="nama" id="nama" value="${pasien.nama}"/>
             </div>
             <div>
-                <label for="alamatPasien">Alamat Pasien</label>
-                <input type="text" name="alamatPasien" id="alamatPasien" value="${pasien.alamat}"/>
+                <label for="alamat">Alamat Pasien:</label>
+                <input type="text" name="alamat" id="alamat" value="${pasien.alamat}"/>
             </div>
             <div>
-                <label for="tanggalLahir">Tanggal Lahir</label>
-                <input type="text" name="tanggalLahir" id="tanggalLahir" value="${pasien.tanggal_lahir}" pattern="^(19[5-9][0-9]|20[0-9][0-9]|2999)[-](0?[1-9]|1[0-2])[-](0?[1-9]|[12][0-9]|3[01])$"/>
+                <label for="tanggal_lahir">Tanggal Lahir:</label>
+                <input type="text" name="tanggal_lahir" id="tanggal_lahir" value="${pasien.tanggal_lahir}" pattern="^(19[5-9][0-9]|20[0-9][0-9]|2999)[-](0?[1-9]|1[0-2])[-](0?[1-9]|[12][0-9]|3[01])$"/>
             </div>
             <div>
                 <button type="submit">Kirim</button>

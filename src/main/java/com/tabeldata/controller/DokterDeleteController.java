@@ -5,7 +5,7 @@
  */
 package com.tabeldata.controller;
 
-import com.tabeldata.dao.PasienDao;
+import com.tabeldata.dao.DokterDao;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -16,23 +16,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author USER
- */
-@WebServlet(urlPatterns="/pasien/delete")
-public class PasienDeleteController extends HttpServlet{
+@WebServlet(urlPatterns="/dokter/delete")
+public class DokterDeleteController extends HttpServlet{
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     
         try {
-            Integer kodePasien = Integer.valueOf(req.getParameter("kode_pasien"));
-            new PasienDao().delete(kodePasien);
+            Integer kodeDokter = Integer.valueOf(req.getParameter("kode_dokter"));
+            new DokterDao().delete(kodeDokter);
         } catch (SQLException ex) {
-            Logger.getLogger(PasienDeleteController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DokterDeleteController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        resp.sendRedirect(req.getServletContext().getContextPath()+"/pasien/");
+        resp.sendRedirect(req.getServletContext().getContextPath()+"/dokter/");
     }
     
+    
+            
 }

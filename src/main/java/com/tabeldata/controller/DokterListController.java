@@ -5,9 +5,11 @@
  */
 package com.tabeldata.controller;
 
-import com.tabeldata.dao.PasienDao;
+import com.tabeldata.Model.Dokter;
+import com.tabeldata.dao.DokterDao;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -20,19 +22,21 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author USER
  */
-@WebServlet(urlPatterns="/pasien/delete")
-public class PasienDeleteController extends HttpServlet{
+@WebServlet(urlPatterns = {"/dokter/list","/dokter/"})
+public class DokterListController extends HttpServlet{
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-    
+    List<Dokter> listDokter;
         try {
-            Integer kodePasien = Integer.valueOf(req.getParameter("kode_pasien"));
-            new PasienDao().delete(kodePasien);
+            listDokter = new DokterDao().findAll();
+            req.setAttribute("listDokter", listDokter);
         } catch (SQLException ex) {
-            Logger.getLogger(PasienDeleteController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DokterListController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        resp.sendRedirect(req.getServletContext().getContextPath()+"/pasien/");
+    req.getRequestDispatcher("/pages/dokter/listDokter.jsp").forward(req, resp);
+            
     }
-    
+
+
 }

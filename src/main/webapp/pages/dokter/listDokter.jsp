@@ -11,30 +11,27 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Daftar Pasien</title>
+        <title>Daftar Dokter</title>
     </head>
     <body>
-        <h1>Daftar Pasien</h1>
+        <h1>Daftar Dokter</h1>
         <table>
             <thead>
                 <tr>
                     <td>No</td>
-                    <td>Nama Pasien</td>
-                    <td>Alamat Pasien</td>
-                    <td>Tanggal Lahir Pasien</td>
-                    <td>Perintah</td>
+                    <td>Nama Dokter</td>
+                    <td>Spesialisasi Dokter</td>
                 </tr>
             </thead>
             <tbody>
-                <c:forEach items="${listPasien}" var="daftarPasien" varStatus="index">
+                <c:forEach items="${listDokter}" var="daftarDokter" varStatus="index">
                     <tr>
                         <td>${index.count}</td>
-                        <td>${daftarPasien.nama}</td>
-                        <td>${daftarPasien.alamat}</td>
-                        <td>${daftarPasien.tanggal_lahir}</td>
+                        <td>${daftarDokter.nama}</td>
+                        <td>${daftarDokter.spesialis}</td>
                         <td>
-                            <a href="${pageContext.servletContext.contextPath}/pasien/delete?kode_pasien=${daftarPasien.id}">Hapus</a>
-                            <a href="${pageContext.servletContext.contextPath}/pasien/update?kode_pasien=${daftarPasien.id}">Ubah</a>
+                            <a href="${pageContext.servletContext.contextPath}/dokter/delete?kode_dokter=${daftarDokter.id}">Hapus</a>
+                            <a href="${pageContext.servletContext.contextPath}/dokter/update?kode_dokter=${daftarDokter.id}">Ubah</a>
                         </td>
                     </tr>
                 </c:forEach>

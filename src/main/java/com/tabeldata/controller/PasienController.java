@@ -36,7 +36,7 @@ public class PasienController extends HttpServlet{
     } catch (SQLException ex) {
         Logger.getLogger(PasienController.class.getName()).log(Level.SEVERE, null, ex);
     }
-
+    resp.sendRedirect(req.getServletContext().getContextPath()+"/pasien/");
     }
     
     
