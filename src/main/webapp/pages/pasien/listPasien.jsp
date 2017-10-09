@@ -42,6 +42,6 @@
         </table>
             <a class="btn btn-lg" href="/latihan-1/index.html" role="button">Kembali ke Halaman Utama</a>
              <br>
-            <a class="btn btn-lg" href="${pageContext.servletContext.contextPath}/pasien/new" role="button">Tambah Ruangan</a>
+            <a class="btn btn-lg" href="${pageContext.servletContext.contextPath}/pasien/new" role="button">Tambah Pasien</a>
     </body>
 </html>

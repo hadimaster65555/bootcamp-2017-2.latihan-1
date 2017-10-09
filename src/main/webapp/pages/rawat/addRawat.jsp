@@ -26,7 +26,7 @@
             <div>
                 <label for="dokterId">Nama Dokter</label>
                 <select name="dokterId" id="dokterId">
-                    <c:forEach items="${listDokter}">
+                    <c:forEach items="${listDokter}" var="dokter">
                         <option value="${dokter.id}">${dokter.nama} (${dokter.spesialis})</option>
                     </c:forEach>
                 </select>   
@@ -34,8 +34,15 @@
             <div>
                 <label for="ruangId">Nomor Ruangan</label>
                 <select name="ruangId" id="ruangId">
-                    <c:forEach items="${listRuang}">
-                        <option value="${ruang.id}">${ruang.no_ruangan} (${ruang.kosong})</option>
+                    <c:forEach items="${listRuang}" var="ruang">
+                    <option value="${ruang.id}">${ruang.no_ruangan}+
+                        <c:if test="${ruang.kosong!=true}">
+                                <c:out value="Kamar Terisi"/>
+                            </c:if>
+                            <c:if test="${ruang.kosong==true}">
+                                <c:out value="Kamar Kosong"/>
+                            </c:if>
+(${ruang.kosong})</option>
                     </c:forEach>
                 </select>   
             </div>

@@ -41,6 +41,8 @@ public class DokterAddController extends HttpServlet{
         } catch (SQLException ex) {
             Logger.getLogger(DokterAddController.class.getName()).log(Level.SEVERE, null, ex);
         }
+                resp.sendRedirect(req.getServletContext().getContextPath()+"/dokter/");
+
     }
 
     

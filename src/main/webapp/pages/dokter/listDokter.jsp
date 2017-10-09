@@ -39,7 +39,7 @@
         </table>
                 <a class="btn btn-lg" href="/latihan-1/index.html" role="button">Kembali ke Halaman Utama</a>
                  <br>
-                <a class="btn btn-lg" href="${pageContext.servletContext.contextPath}/dokter/new" role="button">Tambah Ruangan</a>
+                <a class="btn btn-lg" href="${pageContext.servletContext.contextPath}/dokter/new" role="button">Tambah Dokter</a>
 
     </body>
 </html>
