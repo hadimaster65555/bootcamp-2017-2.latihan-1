@@ -17,7 +17,7 @@
                 <td>Nomor Ruangan</td>
                 <td>Nama Dokter</td>
                 <td>Waktu Register</td>
-                <td>Aksi</td>
+                <td>Waktu Checkout</td>
             </tr>
         </thead>
         <tbody>
@@ -33,7 +33,7 @@
                               <c:out value="Sudah Pulang"/>
                         </c:if>
                         <c:if test="${listRawat.waktu_checkout==null}">
-                            <
+                              <c:out value="Sudah Pulang"/>
                         </c:if>
                     </td>
                 </tr>

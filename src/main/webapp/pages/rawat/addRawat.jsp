@@ -35,14 +35,7 @@
                 <label for="ruangId">Nomor Ruangan</label>
                 <select name="ruangId" id="ruangId">
                     <c:forEach items="${listRuang}" var="ruang">
-                    <option value="${ruang.id}">${ruang.no_ruangan}+
-                        <c:if test="${ruang.kosong!=true}">
-                                <c:out value="Kamar Terisi"/>
-                            </c:if>
-                            <c:if test="${ruang.kosong==true}">
-                                <c:out value="Kamar Kosong"/>
-                            </c:if>
-(${ruang.kosong})</option>
+                        <option value="${ruang.id}">${ruang.no_ruangan} (${ruang.kosong})</option>
                     </c:forEach>
                 </select>   
             </div>

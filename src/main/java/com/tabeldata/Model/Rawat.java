@@ -16,8 +16,11 @@ import lombok.Data;
 public class Rawat {
     private Integer id;
     private Pasien pasien;
+    private Integer pasien_id;
     private Dokter dokter;
+    private Integer dokter_id;
     private Ruang ruang;
+    private Integer ruang_id;
     private Timestamp waktu_register;
     private Timestamp waktu_checkout;
     
