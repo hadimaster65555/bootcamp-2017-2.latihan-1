@@ -5,13 +5,17 @@
  */
 package com.tabeldata.Model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  *
  * @author USER
  */
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Dokter {
     private Integer id;
     private String nama;

@@ -5,7 +5,7 @@
  */
 package com.tabeldata.Model;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 import lombok.Data;
 
 /**
@@ -15,10 +15,10 @@ import lombok.Data;
 @Data
 public class Rawat {
     private Integer id;
-    private Integer pasien_id;
-    private Integer dokter_id;
-    private Integer ruang_id;
-    private Date waktu_register;
-    private Date waktu_checkout;
+    private Pasien pasien;
+    private Dokter dokter;
+    private Ruang ruang;
+    private Timestamp waktu_register;
+    private Timestamp waktu_checkout;
     
 }

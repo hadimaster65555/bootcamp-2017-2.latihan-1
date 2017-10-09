@@ -5,13 +5,17 @@
  */
 package com.tabeldata.Model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  *
  * @author USER
  */
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Ruang {
     private Integer id;
     private Integer no_ruangan;
